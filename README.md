@@ -3,6 +3,10 @@
 F.CSM311 — Lab15-ийн starter код. Maven + JUnit5 жижиг проект.
 
 ## Build & test
+## Оюутны мэдээлэл
+* **Нэр:** Ням-Од
+* **Хичээл:** Програм хангамжийн инженерчлэл / Мэдээллийн технологи
+* **Төслийн нэр:** `lab15-starter` (StringUtils Implementation)
 
 ```bash
 mvn -B clean verify
@@ -18,6 +22,11 @@ src/
 └── test/java/lab/
     └── CalculatorTest.java
 ```
+##  Төслийн тойм
+Энэхүү лабораторийн ажлаар **Java** төсөл дээр **GitHub Actions** ашиглан Matrix Build тохируулж, **JaCoCo** ашиглан кодын бүрхэцийг тооцож, **Branch Protection Rule** болон **Peer Review** процессыг практик дээр хэрэгжүүлэв.
+
+## Тестийн үр дүн (JaCoCo Report)
+Төслийн нэгж тестүүдийг ажиллуулсны дараах бүрхэцийн үзүүлэлт:
 
 ## Lab15 даалгаврын товч жагсаалт
 
@@ -29,3 +38,16 @@ src/
 6. Peer review (хосоор)
 
 Дэлгэрэнгүйг `Lab15-Git-Workflow-and-CICD.md` файлд харна уу.
+## Ашигласан технологиуд
+* **Хэл:** Java 17/21
+* **Угсралтын хэрэгсэл:** Maven
+* **Тест:** JUnit 5
+* **CI/CD:** GitHub Actions
+* **Coverage Tool:** JaCoCo
+
+##  Хэрэгжүүлсэн функцууд
+1. `StringUtils.reverse(String s)`: Тэмдэгт мөрийг урвуу болгох функц (Null-safe).
+2. `StringUtils.capitalize(String s)`: Эхний үсгийг том болгох функц.
+3. `StringUtils.isBlank(String s)`: Хоосон эсвэл null утгыг шалгах функц.
+
+
