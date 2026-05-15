@@ -3,23 +3,23 @@ package lab;
 /**
  * String-тэй ажиллах туслах утга.
  *
- * Lab15 — Даалгавар 2-т `reverse` функц өөрөө нэмэх болно.
+ * Lab15 — Даалгавар 2-т `reverse` функц нэмэгдсэн хувилбар.
  */
 public final class StringUtils {
 
     private StringUtils() {
-        // util class
+        // Туслах класс тул объект үүсгэх боломжгүй болгосон.
     }
 
     /**
-     * Хоосон болон null-ийг шалгах.
+     * Тэмдэгт мөр хоосон эсвэл null эсэхийг шалгах.
      */
     public static boolean isBlank(String s) {
         return s == null || s.trim().isEmpty();
     }
 
     /**
-     * Үгийн эхний үсгийг том болгох (бусад нь хэвээр).
+     * Үгийн эхний үсгийг том болгох.
      */
     public static String capitalize(String s) {
         if (isBlank(s)) {
@@ -28,9 +28,11 @@ public final class StringUtils {
         return Character.toUpperCase(s.charAt(0)) + s.substring(1);
     }
 
-    // TODO (Даалгавар 2): public static String reverse(String s) { ... }
     /**
-     * Тэмдэгт мөрийг урвуу болгох.
+     * Тэмдэгт мөрийг урвуу болгох (Даалгавар 2).
+     * StringBuilder ашиглан Юникод тэмдэгтийг зөв хөрвүүлнэ.
+     * * @param s Оролтын тэмдэгт мөр
+     * @return Урвуулсан тэмдэгт мөр. Хэрэв оролт null эсвэл хоосон бол хэвээр буцаана.
      */
     public static String reverse(String s) {
         if (isBlank(s)) {
