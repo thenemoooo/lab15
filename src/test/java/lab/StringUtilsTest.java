@@ -8,28 +8,32 @@ import org.junit.jupiter.api.Test;
 class StringUtilsTest {
 
     @Test
-    @DisplayName("Ердийн үгийг урвуу болгох")
-    void testReverseRegular() {
-        // 'hello' -> 'olleh' болохыг шалгах
-        assertEquals("olleh", StringUtils.reverse("hello"));
+    @DisplayName("Хоосон болон null утга дээр reverse ажиллахыг шалгах")
+    void testReverseBlank() {
+        // null оролтонд null буцаах ёстой
+        assertNull(StringUtils.reverse(null));
+        // Хоосон оролтонд хоосон буцаах ёстой
+        assertEquals("", StringUtils.reverse(""));
+        // Зөвхөн зай авсан оролтонд зайгаа хэвээр буцаах ёстой
+        assertEquals("   ", StringUtils.reverse("   "));
     }
 
     @Test
-@DisplayName("Юникод (Монгол) тэмдэгт шалгах")
+    @DisplayName("Ердийн ASCII (англи) тэмдэгтүүдийг урвуулах")
+    void testReverseAscii() {
+        // "java" -> "avaj"
+        assertEquals("avaj", StringUtils.reverse("java"));
+        // "12345" -> "54321"
+        assertEquals("54321", StringUtils.reverse("12345"));
+    }
+
+    @Test
+@DisplayName("Юникод (Монгол) тэмдэгтүүдийг зөв урвуулах")
 void testReverseUnicode() {
-    // 1. "сайн" -> "нйас" гэж шалгах (илүү хялбар)
+    // "сайн" -> "нйас"
     assertEquals("нйас", StringUtils.reverse("сайн"));
     
-    // 2. Эсвэл "баяса" гарч ирэхийг зөвшөөрөх
-    assertEquals("баяса", StringUtils.reverse("асяаб"));
+    // "Монгол өгүүлбэр" -> "рэблүүгө логноМ" (Зөв хувилбар)
+    assertEquals("рэблүүгө логноМ", StringUtils.reverse("Монгол өгүүлбэр"));
 }
-
-    @Test
-    @DisplayName("Хоосон эсвэл null утга шалгах")
-    void testReverseSpecial() {
-        // Хоосон string өгөхөд хоосон утга буцаах ёстой
-        assertEquals("", StringUtils.reverse(""));
-        // Null өгөхөд null буцаах ёстой
-        assertNull(StringUtils.reverse(null));
-    }
 }
